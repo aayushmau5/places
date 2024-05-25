@@ -35,3 +35,5 @@ places-*.tar
 npm-debug.log
 /assets/node_modules/
 
+# direnv
+.direnv
