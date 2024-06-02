@@ -1,0 +1,10 @@
+<.flash_group flash={@flash} />
+<div class="flex flex-col">
+  <div class="flex justify-center">
+    <canvas id="canvas" class="shadow-lg border" height="0" width="0"></canvas>
+  </div>
+
+  <code class="flex flex-col grow my-4 p-4 justify-center border">
+    <%= PlacesWeb.CanvasChannel.get_metadata() %>
+  </code>
+</div>

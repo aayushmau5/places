@@ -19,7 +19,7 @@
     in {
       devShells = forAllSystems ({ pkgs, system }: {
         default = pkgs.mkShell {
-          buildInputs = with pkgs; [ elixir_1_14 ];
+          buildInputs = with pkgs; [ elixir_1_14 nodejs_20 ];
         };
       });
     };

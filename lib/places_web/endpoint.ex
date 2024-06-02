@@ -15,6 +15,15 @@ defmodule PlacesWeb.Endpoint do
     websocket: [connect_info: [session: @session_options]],
     longpoll: [connect_info: [session: @session_options]]
 
+  socket "/socket", PlacesWeb.CanvasSocket,
+    websocket: true,
+    longpoll: false
+
+  # For the front-end integration, you need to import the `canvas_socket.js`
+  # in your `assets/js/app.js` file:
+
+  #   import "./canvas_socket.js"
+
   # Serve at "/" the static files from "priv/static" directory.
   #
   # You should set gzip to true if you are running phx.digest
