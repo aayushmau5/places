@@ -14,10 +14,13 @@ defmodule PlacesWeb.Router do
     plug :accepts, ["json"]
   end
 
+  # write code adding a live view
+
   scope "/", PlacesWeb do
     pipe_through :browser
 
     get "/", PageController, :home
+    get "/canvas", PageController, :canvas
   end
 
   # Other scopes may use custom stacks.
