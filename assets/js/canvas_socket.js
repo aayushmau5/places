@@ -117,7 +117,10 @@ const initCanvas = ({ rows, cols, cellSize }) => {
       p5.floor(p5.mouseY / cellSize),
     ];
 
-    channel.push("click", { x, y });
+    if (x >= 0 && x < cols && y >= 0 && y < rows) {
+      grid[y][x] = 1.0;
+      channel.push("click", { x, y });
+    }
   };
 
   const sketch = (p) => {

@@ -5,11 +5,6 @@ defmodule PlacesWeb.PageController do
     # The home page is often custom made,
     # so skip the default app layout.
     conn
-    |> render(:home, layout: false)
-  end
-
-  def canvas(conn, _params) do
-    conn
     |> render(:canvas)
   end
 end

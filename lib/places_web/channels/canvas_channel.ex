@@ -25,7 +25,7 @@ defmodule PlacesWeb.CanvasChannel do
   # broadcast to everyone in the current topic (canvas:lobby).
   @impl true
   def handle_in("click", pos, socket) do
-    broadcast(socket, "click", pos)
+    broadcast_from(socket, "click", pos)
     {:noreply, socket}
   end
 

@@ -16,7 +16,8 @@ defmodule Places.Application do
       # Start a worker by calling: Places.Worker.start_link(arg)
       # {Places.Worker, arg},
       # Start to serve requests, typically the last entry
-      PlacesWeb.Endpoint
+      PlacesWeb.Endpoint,
+      {Places.BotGenServer, []}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
