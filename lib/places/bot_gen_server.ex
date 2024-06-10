@@ -3,8 +3,8 @@ defmodule Places.BotGenServer do
 
   @base_duration_ms 1_000
 
-  def start_link(state) do
-    GenServer.start_link(__MODULE__, state, name: __MODULE__)
+  def start_link(args) do
+    GenServer.start_link(__MODULE__, args)
   end
 
   @impl true
@@ -13,6 +13,7 @@ defmodule Places.BotGenServer do
     {:ok, state}
   end
 
+  @impl true
   def handle_info(:bot_click, state) do
     PlacesWeb.CanvasChannel.random()
     send_bot_click_after_random()
@@ -20,6 +21,6 @@ defmodule Places.BotGenServer do
   end
 
   def send_bot_click_after_random() do
-    Process.send_after(self(), :bot_click, @base_duration_ms)
+    Process.send_after(self(), :bot_click, @base_duration_ms + Enum.random(1..1_000))
   end
 end

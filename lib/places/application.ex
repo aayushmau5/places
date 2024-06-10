@@ -17,7 +17,7 @@ defmodule Places.Application do
       # {Places.Worker, arg},
       # Start to serve requests, typically the last entry
       PlacesWeb.Endpoint,
-      {Places.BotGenServer, []}
+      {Places.BotSupervisor, []}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
